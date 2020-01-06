@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		
+		<form action="add.php" method="POST">
+			<h3>Данные о покупке</h3>
+			<input type="text" name="cost" placeholder="Стоимость" /><br><br>
+			<select id="currency" name="currency" />
+				<option value="rub">RUB</option>
+				<option value="usd">USD</option>
+			</select>
+			<h3>Данные карты</h3>
+			<input type="text" name="cardNumber" placeholder="Номер карты" /><br><br>
+			<input type="text" name="owner" placeholder="Владалец (имя, фамилия)" /><br><br>
+			<input type="text" name="expirationDate" placeholder="Expiration date" /><br><br>
+			<input type="text" name="cvv" placeholder="CVV" /><br><br>
+			<input type="submit" value="Добавить покупку"><br><br>
+			<input type="reset" value="Очистить поля"><br><br>
+		</form>
+		<form>
+			<input type="submit" value="Показать данные" formaction="data.php">
+		</form>
+	</body>
+</html>
