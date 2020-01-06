@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Урок HTML разметки</title>
-	<meta name="description" content="Урок HTML разметки">
-	<meta name="keywords" content="html, Lesson">
+	<title>Document</title>
+	<meta name="description" content="КиноМонстр - это портал о кино">
+	<meta name="keywords" content="Фильмы, Кино, Сериалы">
+	<link rel="stylesheet" href="Assets/CSS/style.css">
 </head>
 <body>
-	<div class="content">
-		<h1>FructCode</h1>
-		<p>300 тысяч фунтов стерлингов было потрачено <span class="colorWorld">британскими учеными</span> на изучение взаимодействия уток с водой. В результате длительного исследования им удалось выяснить, что всем остальным способам провести время в воде утки предпочитают дождь, который заменяет им душ.</p>
-		<p>Еще одно шокирующее открытие исследователей с Туманного Альбиона наконец объяснило страдающим от избыточного веса, в чем заключается их проблема. В ходе научного эксперимента британским ученым удалось установить, что худые люди, как правило, едят меньше, чем полные.</p>
+	<div class="main">
+		<div class="header">
+			<div class="logo">
+				<div class="logo_text">
+					<h1><a href="index.html">КиноМонстр</a></h1>
+					<h2>Кино - наша страсть!</h2>
+				</div>
+			</div>
+			<div class="menubar">
+				<ul class="menu">
+					<li class="selected"><a href="#">Главная</a></li>
+					<!-- # означает, что ссылка не будет работать -->
+					<li><a href="#">Фильмы</a></li>
+					<li><a href="#">Сериалы</a></li>
+					<li><a href="#">Рейтинг фильмов</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-
-	<style type="text/css">
-		.content {
-			width: 300px;
-			background-color: green;
-		}
-
-		.colorWorld {
-			color: red;
-		}
-	</style>
 </body>
 </html>
