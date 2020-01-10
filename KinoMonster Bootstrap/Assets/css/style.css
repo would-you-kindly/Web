@@ -29,6 +29,7 @@
 
 .navbar-inverse {
     padding: 1%;
+    border-radius: 0px;
 }
 
 @media (max-width: 767px) {
