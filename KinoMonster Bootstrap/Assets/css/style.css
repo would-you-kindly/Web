@@ -140,6 +140,10 @@ textarea.form-control {
     height: 200px;
 }
 
+.table tbody>tr>td.vert-align {
+    vertical-align: middle;
+}
+
 footer {
     color: #666;
     background-color: #222;
