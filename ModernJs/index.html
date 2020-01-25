@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="tables"></div>
+    <div id="result"></div>
+    <div id="resultProduct"></div>
+    <div id="resultCalculate"></div>
+    <div id="resultClass"></div>
+
+    <div class="container">
+        <h1>FructCode</h1>
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // let name = "John";
+        // document.getElementById('result').innerHTML = name;
+
+        var balance = 2000;
+        if (balance > 0) {
+            let balance = 3000; // let позволяет создать локальную переменную
+            console.log(balance);
+        }
+        console.log(balance);
+
+        var tables = document.getElementById('tables');
+		for(let i = 1; i <= 6; i++) {
+			var item = document.createElement('span');
+			item.appendChild(document.createTextNode('Table ' + i));
+			item.onclick = function() {
+				document.getElementById('result').innerHTML = 'Table ' + i + ' is select';
+			}
+			tables.appendChild(item);
+		}
+
+        const SETTINGS = {
+            url: "https://api.com",
+            key: "123456"
+        }
+
+        console.log(SETTINGS.url);
+
+        const DB_NAME = "testdb";
+        console.log(DB_NAME);
+
+        var beverages = ["coca-cola", "sprite", "pepsi"];
+        var chocolate = ["twis", "kit-kat", "snickers", "ritter sport"];
+        var food = ["lays", ...beverages, "pringles", ...chocolate]; // ... оператор расширения стандарта ES6, который разворачивает массив в элементы
+        console.log(food);
+
+        function myFunction(x, y, z) {
+            console.log(z);
+        }
+
+        var args = [0, 1, 2];
+        myFunction.apply(null, args); // ES5
+        myFunction(...args); // ES6
+
+        var myArray = [...food]; // Копирование массива
+        console.log(myArray);
+
+        var name = 'John';
+        var productPrice1 = 16;
+        var productPrice2 = 32;
+        // document.getElementById('resultProduct').innerText = 'Hello, ' + name + '! \nTotal: $' + (productPrice1 + productPrice2); // ES5
+        // Вывод через шаблонные строки (ES6)
+        document.getElementById('resultProduct').innerText = `
+            Hello, ${name}!
+            Total: $${productPrice1 + productPrice2}
+        `;
+
+        function calculate(number) {
+            return number * 2;
+        }
+        document.getElementById('resultCalculate').innerHTML = calculate(7);
+
+        // Стрелочная функция (ES6)
+        var calc = number => number * 2;
+        document.getElementById('resultCalculate').innerHTML = calc(6);
+
+        class Messenger {
+            constructor(value, delay) {
+                this.value = value;
+                this.delay = delay;
+            }
+
+            // Плохой вариант (нужно передавать this)
+            showMessage() {
+                let self = this;
+                setTimeout(function() {
+                    document.getElementById('resultClass').innerText = self.value;
+                }, this.delay);
+            }
+
+            // Получше, с помощью стрелочной функции
+            showMessageNormal() {
+                setTimeout(() => {
+                    document.getElementById('resultClass').innerText = this.value;
+                }, this.delay);
+            }
+        }
+
+        var messenger = new Messenger('hello', 2000);
+        messenger.showMessageNormal();
+
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
